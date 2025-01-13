@@ -21,7 +21,8 @@ pub type FdPreadFn =
     fn(fd: Fd, iovs: *const Iovec, len: i32, offset: Filesize, rp0: *mut Size) -> Errno;
 pub type FdPrestatDirNameFn = fn(fd: Fd, path: *mut u8, path_len: Size) -> Errno;
 pub type FdPrestatGetFn = fn(fd: Fd, rp0: *mut Prestat) -> Errno;
-pub type FdPwriteFn = fn(fd: Fd, iovs: *const Iovec, offset: Filesize, rp0: *mut Size) -> Errno;
+pub type FdPwriteFn =
+    fn(fd: Fd, iovs: *const Iovec, iovs_len: i32, offset: Filesize, rp0: *mut Size) -> Errno;
 pub type FdReadFn = fn(fd: Fd, iovs: *const Iovec, iovs_len: i32, rp0: *mut Size) -> Errno;
 pub type FdReaddirFn =
     fn(fd: Fd, buf: *mut u8, buf_len: Size, cookie: Dircookie, rp0: *mut Size) -> Errno;
@@ -327,11 +328,12 @@ pub mod shims {
     unsafe extern "C" fn __shim_fd_pwrite(
         fd: Fd,
         iovs: *const Iovec,
+        iovs_len: i32,
         offset: Filesize,
         rp0: *mut Size,
     ) -> Errno {
         match POLYFILLS.pwrite {
-            Some(f) => f(fd, iovs, offset, rp0),
+            Some(f) => f(fd, iovs, iovs_len, offset, rp0),
             None => unimplemented!("fd_pwrite"),
         }
     }
