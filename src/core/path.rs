@@ -97,47 +97,47 @@ pub mod set {
     }
 
     #[allow(clippy::missing_safety_doc)]
-    pub unsafe fn filestat_get(f: PathFilestatGetFn) {
+    pub unsafe fn path_filestat_get(f: PathFilestatGetFn) {
         POLYFILLS.filestat_get = Some(f);
     }
 
     #[allow(clippy::missing_safety_doc)]
-    pub unsafe fn filestat_set_times(f: PathFilestatSetTimesFn) {
+    pub unsafe fn path_filestat_set_times(f: PathFilestatSetTimesFn) {
         POLYFILLS.filestat_set_times = Some(f);
     }
 
     #[allow(clippy::missing_safety_doc)]
-    pub unsafe fn link(f: PathLinkFn) {
+    pub unsafe fn path_link(f: PathLinkFn) {
         POLYFILLS.link = Some(f);
     }
 
     #[allow(clippy::missing_safety_doc)]
-    pub unsafe fn open(f: PathOpenFn) {
+    pub unsafe fn path_open(f: PathOpenFn) {
         POLYFILLS.open = Some(f);
     }
 
     #[allow(clippy::missing_safety_doc)]
-    pub unsafe fn readlink(f: PathReadlinkFn) {
+    pub unsafe fn path_readlink(f: PathReadlinkFn) {
         POLYFILLS.readlink = Some(f);
     }
 
     #[allow(clippy::missing_safety_doc)]
-    pub unsafe fn remove_directory(f: PathRemoveDirectoryFn) {
+    pub unsafe fn path_remove_directory(f: PathRemoveDirectoryFn) {
         POLYFILLS.remove_directory = Some(f);
     }
 
     #[allow(clippy::missing_safety_doc)]
-    pub unsafe fn rename(f: PathRenameFn) {
+    pub unsafe fn path_rename(f: PathRenameFn) {
         POLYFILLS.rename = Some(f);
     }
 
     #[allow(clippy::missing_safety_doc)]
-    pub unsafe fn symlink(f: PathSymlinkFn) {
+    pub unsafe fn path_symlink(f: PathSymlinkFn) {
         POLYFILLS.symlink = Some(f);
     }
 
     #[allow(clippy::missing_safety_doc)]
-    pub unsafe fn unlink_file(f: PathUnlinkFileFn) {
+    pub unsafe fn path_unlink_file(f: PathUnlinkFileFn) {
         POLYFILLS.unlink_file = Some(f);
     }
 }
