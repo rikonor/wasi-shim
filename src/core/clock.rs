@@ -20,10 +20,12 @@ static mut POLYFILLS: ClockPolyfills = ClockPolyfills {
 pub mod set {
     use super::*;
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn clock_res_get(f: ClockResGetFn) {
         POLYFILLS.res_get = Some(f);
     }
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn clock_time_get(f: ClockTimeGetFn) {
         POLYFILLS.time_get = Some(f);
     }

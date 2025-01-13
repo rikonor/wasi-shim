@@ -16,6 +16,7 @@ static mut POLYFILLS: PollPolyfills = PollPolyfills { oneoff: None };
 pub mod set {
     use super::*;
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn poll_oneoff(f: PollOneoffFn) {
         POLYFILLS.oneoff = Some(f);
     }

@@ -20,10 +20,12 @@ static mut POLYFILLS: ArgsPolyfills = ArgsPolyfills {
 pub mod set {
     use super::*;
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn args_get(f: ArgsGetFn) {
         POLYFILLS.get = Some(f);
     }
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn args_sizes_get(f: ArgsSizesGetFn) {
         POLYFILLS.sizes_get = Some(f);
     }

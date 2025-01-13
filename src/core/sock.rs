@@ -42,18 +42,22 @@ static mut POLYFILLS: SockPolyfills = SockPolyfills {
 pub mod set {
     use super::*;
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn sock_accept(f: SockAcceptFn) {
         POLYFILLS.accept = Some(f);
     }
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn sock_recv(f: SockRecvFn) {
         POLYFILLS.recv = Some(f);
     }
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn sock_send(f: SockSendFn) {
         POLYFILLS.send = Some(f);
     }
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn sock_shutdown(f: SockShutdownFn) {
         POLYFILLS.shutdown = Some(f);
     }

@@ -91,42 +91,52 @@ static mut POLYFILLS: PathPolyfills = PathPolyfills {
 pub mod set {
     use super::*;
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn path_create_directory(f: PathCreateDirectoryFn) {
         POLYFILLS.create_directory = Some(f);
     }
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn filestat_get(f: PathFilestatGetFn) {
         POLYFILLS.filestat_get = Some(f);
     }
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn filestat_set_times(f: PathFilestatSetTimesFn) {
         POLYFILLS.filestat_set_times = Some(f);
     }
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn link(f: PathLinkFn) {
         POLYFILLS.link = Some(f);
     }
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn open(f: PathOpenFn) {
         POLYFILLS.open = Some(f);
     }
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn readlink(f: PathReadlinkFn) {
         POLYFILLS.readlink = Some(f);
     }
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn remove_directory(f: PathRemoveDirectoryFn) {
         POLYFILLS.remove_directory = Some(f);
     }
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn rename(f: PathRenameFn) {
         POLYFILLS.rename = Some(f);
     }
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn symlink(f: PathSymlinkFn) {
         POLYFILLS.symlink = Some(f);
     }
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn unlink_file(f: PathUnlinkFileFn) {
         POLYFILLS.unlink_file = Some(f);
     }

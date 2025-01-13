@@ -15,6 +15,7 @@ static mut POLYFILLS: RandomPolyfills = RandomPolyfills { get: None };
 pub mod set {
     use super::*;
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn random_get(f: RandomGetFn) {
         POLYFILLS.get = Some(f);
     }

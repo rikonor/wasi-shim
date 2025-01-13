@@ -20,10 +20,12 @@ static mut POLYFILLS: ProcPolyfills = ProcPolyfills {
 pub mod set {
     use super::*;
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn proc_exit(f: ProcExitFn) {
         POLYFILLS.exit = Some(f);
     }
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn proc_raise(f: ProcRaiseFn) {
         POLYFILLS.raise = Some(f);
     }

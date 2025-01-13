@@ -15,6 +15,7 @@ static mut POLYFILLS: SchedPolyfills = SchedPolyfills { sched_yield: None };
 pub mod set {
     use super::*;
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn sched_yield(f: SchedYieldFn) {
         POLYFILLS.sched_yield = Some(f);
     }

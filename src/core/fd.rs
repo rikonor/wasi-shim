@@ -84,86 +84,107 @@ static mut POLYFILLS: FdPolyfills = FdPolyfills {
 pub mod set {
     use super::*;
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn fd_advise(f: FdAdviseFn) {
         POLYFILLS.advise = Some(f);
     }
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn fd_allocate(f: FdAllocateFn) {
         POLYFILLS.allocate = Some(f);
     }
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn fd_close(f: FdCloseFn) {
         POLYFILLS.close = Some(f);
     }
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn fd_datasync(f: FdDatasyncFn) {
         POLYFILLS.datasync = Some(f);
     }
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn fd_fdstat_get(f: FdFdstatGetFn) {
         POLYFILLS.fdstat_get = Some(f);
     }
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn fd_fdstat_set_flags(f: FdFdstatSetFlagsFn) {
         POLYFILLS.fdstat_set_flags = Some(f);
     }
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn fd_fdstat_set_rights(f: FdFdstatSetRightsFn) {
         POLYFILLS.fdstat_set_rights = Some(f);
     }
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn fd_filestat_get(f: FdFilestatGetFn) {
         POLYFILLS.filestat_get = Some(f);
     }
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn fd_filestat_set_size(f: FdFilestatSetSizeFn) {
         POLYFILLS.filestat_set_size = Some(f);
     }
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn fd_filestat_set_times(f: FdFilestatSetTimesFn) {
         POLYFILLS.filestat_set_times = Some(f);
     }
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn fd_pread(f: FdPreadFn) {
         POLYFILLS.pread = Some(f);
     }
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn fd_prestat_dir_name(f: FdPrestatDirNameFn) {
         POLYFILLS.prestat_dir_name = Some(f);
     }
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn fd_prestat_get(f: FdPrestatGetFn) {
         POLYFILLS.prestat_get = Some(f);
     }
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn fd_pwrite(f: FdPwriteFn) {
         POLYFILLS.pwrite = Some(f);
     }
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn fd_read(f: FdReadFn) {
         POLYFILLS.read = Some(f);
     }
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn fd_readdir(f: FdReaddirFn) {
         POLYFILLS.readdir = Some(f);
     }
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn fd_renumber(f: FdRenumberFn) {
         POLYFILLS.renumber = Some(f);
     }
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn fd_seek(f: FdSeekFn) {
         POLYFILLS.seek = Some(f);
     }
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn fd_sync(f: FdSyncFn) {
         POLYFILLS.sync = Some(f);
     }
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn fd_tell(f: FdTellFn) {
         POLYFILLS.tell = Some(f);
     }
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn fd_write(f: FdWriteFn) {
         POLYFILLS.write = Some(f);
     }

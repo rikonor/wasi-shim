@@ -20,10 +20,12 @@ static mut POLYFILLS: EnvironPolyfills = EnvironPolyfills {
 pub mod set {
     use super::*;
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn environ_get(f: EnvironGetFn) {
         POLYFILLS.get = Some(f);
     }
 
+    #[allow(clippy::missing_safety_doc)]
     pub unsafe fn environ_sizes_get(f: EnvironSizesGetFn) {
         POLYFILLS.sizes_get = Some(f);
     }
